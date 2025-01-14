@@ -1,0 +1,53 @@
+.navbar {
+    background-color: #333;
+    padding: 8px 0;
+   
+  }
+  .navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .navbar-item {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar-item:hover {
+    background-color: #575757;
+  }
+  
+  .navbar-weather {
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .navbar-weather p {
+    margin: 0 5px;
+  }
+  
+  .navbar-weather img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  @media (max-width:700px) {
+    .navbar{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }

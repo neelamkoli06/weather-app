@@ -1,0 +1,347 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-image: url('/images/Weather-app.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-color: #78cbe4; */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app.dark {
+  background-color: #2e2e2e;
+  color: white;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #FFCF50;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar li {
+  margin: 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: light;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+  color: #2d97d4;
+}
+
+/* Home Page Styles */
+.home {
+  padding: 20px;
+  text-align: center;
+}
+/* Overall Search Bar Styling */
+.search-bar {
+  position: relative;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3); /* Slightly dark background */
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensure search bar is full width of its container */
+  max-width: 800px; /* Limit maximum width */
+  margin: 0 auto; /* Center the search bar horizontally */
+}
+
+/* Input Field Styling */
+.search-bar input {
+  padding: 12px;
+  font-size: 18px;
+  width: 100%; /* Take up full width of parent */
+  max-width: 600px; /* Limit max width for input */
+  border: 2px solid #444;
+  border-radius: 50px;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus state for input */
+.search-bar input:focus {
+  border-color: #91cfec;
+  box-shadow: 0 0 10px rgba(0, 128, 0, 0.4);
+}
+
+/* Button Styling */
+.search-bar button {
+  margin-left: 10px;
+  padding: 12px 20px;
+  background-color: #91cfec;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button Hover Effect */
+.search-bar button:hover {
+  background-color: #009EDF;
+  transform: scale(1.05);
+}
+
+/* Dropdown Styles for Recent Searches */
+.recent-searches-dropdown {
+  position: absolute;
+  top: 84%; /* Position directly below the search bar */
+  left: 8%; /* Align with the left edge of the search bar */
+  width: 100%; /* Ensure it is as wide as the search input */
+  max-width: 600px; /* Limit the dropdown width */
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  max-height: 200px;
+  overflow-y: scroll;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.recent-searches-dropdown {
+  -ms-overflow-style: none;  /* Hide scrollbar for IE */
+  scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+/* Dropdown list styling */
+.recent-searches-dropdown ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Individual items in the dropdown */
+.recent-searches-dropdown li {
+  padding:6px;
+  font-size: 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between; /* Ensure trash icon is on the right */
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover effect on dropdown items */
+.recent-searches-dropdown li:hover {
+  background-color: #f1f1f1;
+  color: #08c4c4;
+}
+
+/* Last item - remove border */
+.recent-searches-dropdown li:last-child {
+  border-bottom: none;
+}
+
+/* Fade-in animation for dropdown */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Remove button styling (trash icon) */
+.remove-btn {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.remove-btn:hover {
+  color: #d32f2f;
+}
+
+
+
+.weather-card {
+  display: inline-block;
+  background-color: rgba(0,0,0,0.2);
+  padding: 20px;
+  margin-top: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.weather-card:hover {
+  transform: scale(1.1);
+}
+
+.weather-card img {
+  width: 100px;
+  height: 100px;
+}
+
+.weather-card h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.weather-card p {
+  font-size: 18px;
+  color: black;
+  font-weight: light;
+}
+
+.error {
+  color: red;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/* Forecast Page Styles */
+.forecast {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.forecast-card {
+  background-color: rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 180px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.forecast-card:hover{
+  transform: scale(1.2);
+}
+
+.forecast-card img {
+  width: 50px;
+  height: 50px;
+}
+
+.forecast-card p {
+  margin: 10px 0;
+
+}
+
+/* Settings Page Styles */
+.settings {
+  padding: 20px;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+
+.settings h2 {
+  margin-bottom: 20px;
+}
+
+.settings select,
+.settings input {
+  padding: 4px;
+  margin: 10px 8px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.settings label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.settings .form-group{
+  display: flex;
+  justify-content:center;
+  align-items: center; 
+}
+.settings .form-group .checkbox{
+  margin: 28px;
+}
+
+/* Dark Mode */
+.app.dark .navbar {
+  background-color: #333;
+}
+.app.dark .settings{
+  background-color: #444;
+}
+
+.app.dark .weather-card {
+  background-color: #444;
+  color: white;
+}
+.app.dark .weather-card p{
+  color: white;
+}
+
+.app.dark .forecast-card {
+  background-color: #444;
+  color: white;
+}
+
+.app.dark .search-bar input,
+.app.dark .search-bar button {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .forecast {
+    flex-direction: column;
+  }
+
+  .weather-card {
+    width: 250px;
+  }
+
+  .forecast-card {
+    width: 250px;
+    margin-left: 30px;
+  }
+
+  .search-bar input {
+    width: 200px;
+  }
+  .recent-searches-dropdown {
+    left: 0;
+    width: 100%;
+  }
+}
